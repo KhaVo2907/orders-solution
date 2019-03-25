@@ -1,7 +1,7 @@
 # orders-solution
 Orders Solution 
 
-There are 2 micro service by Nodejs framework, using MongoDB, and Winston at middleware for logging error/debug/info to static file.<br/>
+There are 2 micro service by Nodejs framework, using MongoDB, using Winston at middleware for logging error/debug/info to static file and elastic search for searching <br/>
 Using Angular 7 and Angular material for display UI. <br/>
 The main function of the app is orders and payments management.<br/>
 
