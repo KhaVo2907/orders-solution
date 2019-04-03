@@ -34,8 +34,6 @@ exports.post = function (req, res) {
             res.write(JSON.stringify({ success: true, data: data }, null, 2));
             res.end();
         }
-
-
     })
 }
 
@@ -92,14 +90,3 @@ exports.getBy = function (req, res) {
         }
     });
 };
-
-
-// exports.search = function (req, res, next) {
-//     await esSearch.queryTerm(term, offset);
-// }
-
-// router.get('/search', async (ctx, next) => {
-//     const { term, offset } = ctx.request.query
-//     ctx.body = await search.queryTerm(term, offset)
-//   }
-// )
