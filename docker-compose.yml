@@ -7,12 +7,10 @@ services:
     networks:
       - orders-solution-network
     environment:
-      - MONGO_DATA_DIR=/data/orders-db
-      - MONGO_DATA_DIR=/data/payments-db
+      - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
     volumes:
-        - data-orders-db:/data/orders-db
-        - data-payments-db:/data/payments-db
+        - data-db:/data/db
     command: mongod --smallfiles --logpath=/dev/null # --quiet
 
   order-web:

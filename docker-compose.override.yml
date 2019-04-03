@@ -6,8 +6,12 @@ services:
       - 27017:27017
 
   order-web:
+    build:
+      args:
+        BUILD_MODE: --prod
+        CONFIG_MODE: --configuration=production
     ports:
-      - "4200:3000"
+      - "4200:4200"
 
   order-api:
     ports:
