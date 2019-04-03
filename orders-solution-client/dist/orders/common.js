@@ -1,15 +1,15 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"],{
 
-/***/ "./src/app/book/book.service.ts":
-/*!**************************************!*\
-  !*** ./src/app/book/book.service.ts ***!
-  \**************************************/
-/*! exports provided: BookService */
+/***/ "./src/app/payment/payment.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/payment/payment.service.ts ***!
+  \********************************************/
+/*! exports provided: PaymentService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookService", function() { return BookService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaymentService", function() { return PaymentService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
@@ -27,34 +27,34 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var BookService = /** @class */ (function () {
-    function BookService(http) {
+var PaymentService = /** @class */ (function () {
+    function PaymentService(http) {
         this.http = http;
-        this.API = 'http://localhost:3000/books';
+        this.API = 'http://localhost:3000/Payments';
     }
-    BookService.prototype.getBooks = function () {
+    PaymentService.prototype.getPayments = function () {
         return this
             .http
             .get("" + this.API)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function (data) { return console.log(JSON.stringify(data)); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
     };
-    BookService.prototype.add = function (newBook) {
+    PaymentService.prototype.add = function (newPayment) {
         return this
             .http
-            .post("" + this.API, newBook)
+            .post("" + this.API, newPayment)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function (data) { return console.log(JSON.stringify(data)); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
     };
-    BookService.prototype.handleError = function (res) {
+    PaymentService.prototype.handleError = function (res) {
         console.error(res);
         return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["throwError"])(res.error || 'Server error');
     };
-    BookService = __decorate([
+    PaymentService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
-    ], BookService);
-    return BookService;
+    ], PaymentService);
+    return PaymentService;
 }());
 
 

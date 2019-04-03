@@ -8,15 +8,15 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./book/book.module": [
-		"./src/app/book/book.module.ts",
+	"./order/order.module": [
+		"./src/app/order/order.module.ts",
 		"common",
-		"book-book-module"
+		"order-order-module"
 	],
-	"./user/user.module": [
-		"./src/app/user/user.module.ts",
+	"./payment/payment.module": [
+		"./src/app/payment/payment.module.ts",
 		"common",
-		"user-user-module"
+		"payment-payment-module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -62,12 +62,14 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'books' },
-    { path: 'books',
-        loadChildren: './book/book.module#BookModule'
+    { path: '', pathMatch: 'full', redirectTo: 'payments' },
+    {
+        path: 'payments',
+        loadChildren: './payment/payment.module#PaymentModule'
     },
-    { path: 'users',
-        loadChildren: './user/user.module#UserModule'
+    {
+        path: 'orders',
+        loadChildren: './order/order.module#OrderModule'
     }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -403,7 +405,7 @@ module.exports = ".sidenav-container {\n  height: 100%;\n}\n\n.sidenav {\n  widt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container class=\"sidenav-container\">\n  <mat-sidenav #drawer class=\"sidenav\" fixedInViewport=\"true\"\n    [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\" [mode]=\"(isHandset$ | async) ? 'over' : 'side'\"\n    [opened]=\"!(isHandset$ | async)\">\n    <mat-toolbar color=\"primary\">Menu</mat-toolbar>\n    <mat-nav-list>\n      <a mat-list-item routerLink=\"/books\">Books</a>\n      <a mat-list-item routerLink=\"/users\">Users</a>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n    <mat-toolbar color=\"primary\">\n      <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\"\n        *ngIf=\"isHandset$ | async\">\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\n      </button>\n      <span>Book Management</span>\n      <span class=\"spacer\"></span>\n      <span>\n        <a class=\"bg-color\" routerLink=\"/books/add-book\">\n          Add Book\n        </a>\n        <a class=\"bg-color\" routerLink=\"/users/add-user\">\n          Add User\n        </a>\n      </span>\n    </mat-toolbar>\n    <!-- Add Content Here -->\n    <router-outlet></router-outlet>\n  </mat-sidenav-content>\n</mat-sidenav-container>"
+module.exports = "<mat-sidenav-container class=\"sidenav-container\">\n  <mat-sidenav #drawer class=\"sidenav\" fixedInViewport=\"true\"\n    [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\" [mode]=\"(isHandset$ | async) ? 'over' : 'side'\"\n    [opened]=\"!(isHandset$ | async)\">\n    <mat-toolbar color=\"primary\">Menu</mat-toolbar>\n    <mat-nav-list>\n      <a mat-list-item routerLink=\"/payments\">Payments</a>\n      <a mat-list-item routerLink=\"/orders\">Orders</a>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n    <mat-toolbar color=\"primary\">\n      <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\"\n        *ngIf=\"isHandset$ | async\">\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\n      </button>\n      <span>Orders Solution</span>\n      <span class=\"spacer\"></span>\n      <span>\n        <a class=\"bg-color\" routerLink=\"/orders/add-order\">\n          Create Order\n        </a>\n      </span>\n    </mat-toolbar>\n    <router-outlet></router-outlet>\n  </mat-sidenav-content>\n</mat-sidenav-container>"
 
 /***/ }),
 
@@ -513,7 +515,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\KHAVNA\Working\orders-solution\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\KHAVNA\Working\orders-solution\orders-solution-client\src\main.ts */"./src/main.ts");
 
 
 /***/ })

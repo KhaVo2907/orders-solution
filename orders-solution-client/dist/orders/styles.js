@@ -580,8 +580,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\KHAVNA\Working\orders-solution\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
-module.exports = __webpack_require__(/*! C:\KHAVNA\Working\orders-solution\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! C:\KHAVNA\Working\orders-solution\orders-solution-client\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
+module.exports = __webpack_require__(/*! C:\KHAVNA\Working\orders-solution\orders-solution-client\src\styles.css */"./src/styles.css");
 
 
 /***/ })
