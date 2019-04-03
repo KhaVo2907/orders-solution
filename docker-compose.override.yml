@@ -11,7 +11,7 @@ services:
         BUILD_MODE: --prod
         CONFIG_MODE: --configuration=production
     ports:
-      - "4200:4200"
+      - "4200:80"
 
   order-api:
     ports:
