@@ -1,6 +1,5 @@
 const orderList = require('../orders/order.model');
 const orderEnum = require('../../enum/order');
-const esSearch = require('../search/search');
 
 exports.get = function (req, res) {
     var pageNo = parseInt(req.query.pageNo);
