@@ -1,13 +1,23 @@
-# orders-solution
-Orders Solution 
+# orders-solution 
 
-There are 3 micro service by Nodejs framework, using MongoDB, using Winston at middleware for logging error/debug/info to static file<br/>
-Using Angular 7 and Angular material for display UI. <br/>
-The main function of the app is orders and payments management.<br/>
+## Tool
+Angular 7 - Angular material <br/>
+NodeJS version 10.x  <br/>
+MongoDB 4.x <br/>
+Docker <br/>
+
+## Architecture for microservice
+
+                            Orders UI
+                                           
+    (Rest API) Order Service <-----> Payment Service(Rest API) 
+                     |                           |
+                     |                           |
+                 MongoDB                       MongoDB
+                 
+## Description
 
 First step please run "npm i" for install required package for the application.<br/>
-
--Orders Client <br/>
 
 -Orders Service ( port 4000): <br/>
     + get all orders <br/>
@@ -17,11 +27,19 @@ First step please run "npm i" for install required package for the application.<
     + cancel order <br/>
     + delete order <br/>
 
--Payments Service ( port 3000 ): <br/>
+-Payments Service: <br/>
     + get all payments <br/>
     + add new payment (handle state of order: update order to CONFIRM state) <br/>
     + delete payment <br/>
-
+    
+-Run
+   Docker commands for running the app:  <br/>
+    - docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build -d <br/>
+    - docker-compose up -d <br/>
+        +order-web front end (port 4200)<br/>
+        +order-api (port 4000) <br/>
+        +payment-api (port 3000)  <br/>
+        
 Currently we have the general scenario:  <br/>
     0. Default screen is payment managements, there is menu for switching orders management and payments management. <br/>
     1. Create new order with order info (number,description,id) at create order screen. <br/>
@@ -30,8 +48,8 @@ Currently we have the general scenario:  <br/>
     4. The app auto redirect to orders management screen.<br/>
     5. Orders service will call api update to order state is CONFIRMED.<br/>
     
-   
-  #UPDATED:
+## UPDATED:<br/>
+
   -Refactor the previous application follow micro service architecture <br/>
   -Config docker for build and deploy. <br/>
-  -Using mocha, add unit test for services <br/>
+  -Using mocha, add unit test for order service <br/>
