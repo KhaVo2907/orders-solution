@@ -8,8 +8,8 @@ Docker <br/>
 
 ## Architecture for microservice
 
-                            Orders UI
-                                           
+                  Orders UI
+                     |                     
     (Rest API) Order Service <-----> Payment Service(Rest API) 
                      |                           |
                      |                           |
