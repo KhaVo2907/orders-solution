@@ -3,7 +3,7 @@ module.exports = {
     logging: true,
     seed: true,
     db: {
-      url: 'mongodb://localhost/orders-db'
+      url: 'mongodb://mongodb/orders-db'
     }
   };
   
