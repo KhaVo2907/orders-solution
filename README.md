@@ -87,7 +87,7 @@ First step please run "npm i" for install required package for the application.<
 -Payments Service: <br/>
     + get all payments <br/>
     + add new payment (handle state of order: update order to CONFIRM state) <br/>
-    + delete payment <br/
+    + delete payment <br/>
     
 ## Run
 
