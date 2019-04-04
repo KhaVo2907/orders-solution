@@ -9,7 +9,7 @@ import { Order } from '../shared/interfaces/order';
 })
 export class OrderService {
   private API = 'http://localhost:4000/orders';
-
+  
   constructor(private http: HttpClient) { }
 
   getOrders(): Observable<Order[]> {
