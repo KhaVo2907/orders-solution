@@ -43,8 +43,10 @@ exports.post = function (req, res) {
                 body: JSON.stringify(orderJson)
             }, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
-                    var res = JSON.parse(response.body);
-                    if (res.data.status == 'confirmed') {
+                    var resData = JSON.parse(response.body);
+                    res.write(JSON.stringify({ success: true, data: resData }, null, 2));
+                    res.end();
+                    if (resData.data.status == 'confirmed') {
                         setTimeout(() => {
                             data.status = 'delivered';
                             orderList.update(data);
@@ -52,9 +54,6 @@ exports.post = function (req, res) {
                     }
                 }
             });
-
-            res.write(JSON.stringify({ success: true, data: data }, null, 2));
-            res.end();
         }
     })
 }

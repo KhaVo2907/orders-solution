@@ -5,6 +5,6 @@ module.exports = {
         if (order) {
             return order.status = orderEnum.CONFIRMED;
         }
-        return null;
+        return orderEnum.DECLINED;
     }
 }

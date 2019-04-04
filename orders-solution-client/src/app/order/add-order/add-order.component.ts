@@ -40,9 +40,17 @@ export class AddOrderComponent implements OnInit {
     this.orderService.addOrder(newOrder)
       .subscribe(
         data => {
-          console.log(data);
+          if (data.data.data.status === 'declined') {
+            data.data.data.status = 'canceled';
+            this.orderService.updateOrder(data.data.data).subscribe(result => {
+              this.router.navigate(['/orders']);
+            });
+          }
           this.router.navigate(['/orders']);
         }
       );
   }
 }
+
+
+

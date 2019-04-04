@@ -32,7 +32,7 @@ export class OrderService {
       );
   }
 
-  addOrder(order: Order): Observable<Order> {
+  addOrder(order: Order): Observable<any> {
     return this
       .http
       .post<Order>(`${this.API}`, order)
