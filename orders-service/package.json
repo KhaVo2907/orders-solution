@@ -2,9 +2,8 @@
   "name": "orders-solution",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
+    "lint": "eslint -c .eslintrc.js .",
     "start": "node orders-service.js",
-    "build": "node orders-service.js",
     "test": "mocha './services/orders/order.controller.spec.js'"
   },
   "private": true,
