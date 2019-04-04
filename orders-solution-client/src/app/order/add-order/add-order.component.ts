@@ -40,26 +40,9 @@ export class AddOrderComponent implements OnInit {
     this.orderService.addOrder(newOrder)
       .subscribe(
         data => {
-          this.processOrder(data);
+          console.log(data);
+          this.router.navigate(['/orders']);
         }
       );
-  }
-
-  processOrder(order: any) {
-    const payment = {
-      order: {
-        id: order.data._id
-      }
-    };
-    this.paymentService.add(payment).subscribe(data => {
-      if (data.data && data.data.status === 'declined') {
-        data.data.status = 'canceled';
-      } else if (data.data && data.data.status === 'confirmed') {
-        data.data.status = 'confirmed';
-      }
-      this.orderService.updateOrder(data.data).subscribe(result => {
-        this.router.navigate(['/orders']);
-      });
-    });
   }
 }

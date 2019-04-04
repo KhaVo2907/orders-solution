@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/orders-service.js"
+            "program": "${workspaceFolder}\\orders-service\\orders-service.js"
         },
         {
             "type": "node",

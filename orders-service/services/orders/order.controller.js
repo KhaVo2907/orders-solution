@@ -1,5 +1,7 @@
 const orderList = require('../orders/order.model');
 const orderEnum = require('../../enum/order');
+const request = require('request');
+const config = require('../../config/config');
 
 exports.get = function (req, res) {
     var pageNo = parseInt(req.query.pageNo);
@@ -30,6 +32,27 @@ exports.post = function (req, res) {
         if (err) {
             res.json({ success: false, message: `Failed to create a new Order. Error: ${err}` });
         } else {
+            const orderJson = {
+                order: {
+                    id: data._id
+                }
+            };
+            request.post({
+                headers: { 'content-type': 'application/json' },
+                url: config.apiPayment,
+                body: JSON.stringify(orderJson)
+            }, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    var res = JSON.parse(response.body);
+                    if (res.data.status == 'confirmed') {
+                        setTimeout(() => {
+                            data.status = 'delivered';
+                            orderList.update(data);
+                        }, 3000);
+                    }
+                }
+            });
+
             res.write(JSON.stringify({ success: true, data: data }, null, 2));
             res.end();
         }
