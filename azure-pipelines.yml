@@ -1,6 +1,0 @@
-- task: DockerCompose@0
-  inputs:
-    containerregistrytype: 'Container Registry'
-    dockerComposeFile: '**/docker-compose.yml'
-    dockerComposeFileArgs: 'production'
-    action: 'Run a Docker Compose command'
