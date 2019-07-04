@@ -10,15 +10,5 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    - task: DockerCompose@0
-      inputs:
-        containerregistrytype: 'Container Registry'
-        dockerComposeFile: '**/docker-compose.yml'
-        dockerComposeFileArgs: 'production'
-        action: 'Run a Docker Compose command'
-        dockerComposeCommand: 'docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build -d'
-  displayName: 'Run a multi-line script'
+- script: docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build -d
+  displayName: 'Build docker command'
