@@ -1,4 +1,4 @@
-FROM node:9.6.1 as builder
+FROM node:10.9 as builder
 ARG BUILD_MODE
 ARG CONFIG_MODE
 
