@@ -30,6 +30,6 @@
     "codelyzer": "~4.2.1",
     "concurrently": "~3.5.0",
     "eslint": "^5.16.0",
-    "mocha": "^6.0.2"
+    "mocha": "^10.2.0"
   }
 }
